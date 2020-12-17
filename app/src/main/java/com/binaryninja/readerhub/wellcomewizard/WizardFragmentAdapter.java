@@ -1,4 +1,4 @@
-package com.hackaton.ethiopianhealthemergency.wizard;
+package com.binaryninja.readerhub.wellcomewizard;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -16,17 +16,19 @@ public class WizardFragmentAdapter extends FragmentPagerAdapter {
             case 0:
                 return new LangSelect();
             case 1:
-                return new BasicInfo();
+                return new Guide();
             case 2:
-                return new HealthData();
+                return new GuideTwo();
             case 3:
-                return new EmergencyContact();
+                return new GuideThree();
+            case 4:
+                return new AccountPage();
         }
         return new LangSelect();
     }
 
     @Override
     public int getCount() {
-        return 4;
+        return 5;
     }
 }

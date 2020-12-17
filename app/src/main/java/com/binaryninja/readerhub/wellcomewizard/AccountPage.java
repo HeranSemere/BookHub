@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.binaryninja.readerhub.R;
 
-public class SignInPage extends Fragment {
+public class AccountPage extends Fragment {
     AppCompatButton signup,login,guest;
     @Nullable
     @Override
@@ -25,8 +25,8 @@ public class SignInPage extends Fragment {
             public void onClick(View view) {
                 FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
                 Fragment registerFragment = new RegisterPage();
-                transaction.addToBackStack(null);
-                transaction.replace(R.id.wizard_parent,registerFragment).commit();
+                transaction.replace(R.id.wizard_parent,registerFragment);
+                transaction.commitAllowingStateLoss();
             }
         });
         return view;

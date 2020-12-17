@@ -1,4 +1,4 @@
-package com.hackaton.ethiopianhealthemergency.wizard;
+package com.binaryninja.readerhub.wellcomewizard;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

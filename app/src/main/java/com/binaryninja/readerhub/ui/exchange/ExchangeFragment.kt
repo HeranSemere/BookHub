@@ -13,18 +13,18 @@ import com.binaryninja.readerhub.ui.messages.ExchangeViewModel
 
 class ExchangeFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: ExchangeViewModel
+    private lateinit var exchangeViewModel: ExchangeViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
+        exchangeViewModel =
                 ViewModelProviders.of(this).get(ExchangeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_exchange, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+        val textView: TextView = root.findViewById(R.id.text)
+        exchangeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

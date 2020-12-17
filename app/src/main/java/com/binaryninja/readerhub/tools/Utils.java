@@ -1,4 +1,4 @@
-package com.binaryninja.readerhub;
+package com.binaryninja.readerhub.tools;
 
 import android.app.WallpaperManager;
 import android.content.Context;
@@ -14,7 +14,7 @@ import java.util.Locale;
 
 public class Utils {
     public static void loadLanguage(Context c,String lang){
-        SharedPreferences sharedPref = c.getSharedPreferences("",Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = c.getSharedPreferences(Constant.SHARED_PREFNAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         if (lang == null)
             lang = sharedPref.getString("language", Locale.getDefault().getLanguage());

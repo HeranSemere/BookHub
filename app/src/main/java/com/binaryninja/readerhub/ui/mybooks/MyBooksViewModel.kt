@@ -1,4 +1,4 @@
-package com.binaryninja.readerhub.ui.profile
+package com.binaryninja.readerhub.ui.mybooks
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

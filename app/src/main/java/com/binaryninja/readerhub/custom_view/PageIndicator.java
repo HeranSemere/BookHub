@@ -1,4 +1,4 @@
-package com.hackaton.ethiopianhealthemergency.custom_view;
+package com.binaryninja.readerhub.custom_view;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class PageIndicator extends LinearLayout {
     List<AppCompatTextView> views = new LinkedList<>();
-    int totalPage = 4;
+    int totalPage = 5;
 
     public PageIndicator(Context context, int pageCount) {
         super(context);
@@ -39,9 +39,9 @@ public class PageIndicator extends LinearLayout {
         for (int i = 0; i < totalPage; i++) {
             AppCompatTextView view = new AppCompatTextView(getContext());
             view.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-            view.setText("●");
+            view.setText("○");
             view.setTextColor(Color.parseColor("#883D3D3D"));
-            view.setTextSize(15);
+            view.setTextSize(18);
             view.setPadding(15, 0, 15, 0);
             views.add(view);
             addView(view);

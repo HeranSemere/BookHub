@@ -1,43 +1,33 @@
-package com.hackaton.ethiopianhealthemergency.wizard;
+package com.binaryninja.readerhub.wellcomewizard;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.lifecycle.Observer;
 import androidx.viewpager.widget.ViewPager;
 
-import com.hackaton.ethiopianhealthemergency.MainActivity;
-import com.hackaton.ethiopianhealthemergency.R;
-import com.hackaton.ethiopianhealthemergency.custom_view.PageIndicator;
-import com.hackaton.ethiopianhealthemergency.model.User;
-import com.hackaton.ethiopianhealthemergency.utils.Constant;
-import com.hackaton.ethiopianhealthemergency.utils.SharedPref;
+import com.binaryninja.readerhub.MainActivity;
+import com.binaryninja.readerhub.R;
+import com.binaryninja.readerhub.custom_view.PageIndicator;
+import com.binaryninja.readerhub.tools.Constant;
+import com.binaryninja.readerhub.tools.SharedPref;
+
 
 public class WizardMain extends AppCompatActivity {
-    public static User user = new User();
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         SharedPref pref = new SharedPref(getApplicationContext());
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED)
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS, Manifest.permission.CAMERA}, 2);
-
-        if (!pref.getBool(Constant.PREF_FRIST_RUN, true)) {
-            if (!getIntent().getBooleanExtra("force", false)) {
-                startActivity(new Intent(this, MainActivity.class));
-                finish();
-            }
+        if (!pref.getBool(Constant.PREF_FIRST_RUN, true)) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
         }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         final ViewPager pager = findViewById(R.id.wizard_pager);

@@ -1,9 +1,7 @@
-package com.hackaton.ethiopianhealthemergency.utils;
+package com.binaryninja.readerhub.tools;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
-import java.util.prefs.Preferences;
 
 public class SharedPref {
     SharedPreferences preferences;
