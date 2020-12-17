@@ -3,7 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="my_books">My Books</string>
+    <string name="my_books">Books</string>
     <string name="exchange">Exchange</string>
     <string name="messages">Messages</string>
     <string name="profile">Profile</string>
@@ -12,5 +12,4 @@
     <string name="amharic">አማርኛ</string>
     <string name="oromifa">Oromifa</string>
     <string name="tigrigna">ትግሪኛ</string>
-    <string name="next">Next</string>
 </resources>
