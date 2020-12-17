@@ -1,5 +1,6 @@
 package com.binaryninja.readerhub.wellcomewizard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.binaryninja.readerhub.MainActivity;
 import com.binaryninja.readerhub.R;
 
 public class AccountPage extends Fragment {
@@ -20,6 +22,7 @@ public class AccountPage extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.wizard_signin,container,false);
         signup = view.findViewById(R.id.wizard_login_signup);
+        guest = view.findViewById(R.id.wizard_login_guest);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,6 +32,7 @@ public class AccountPage extends Fragment {
                 transaction.commitAllowingStateLoss();
             }
         });
+        guest.setOnClickListener(view1 -> startActivity(new Intent(getContext(), MainActivity.class)));
         return view;
     }
     public void loadResource(){

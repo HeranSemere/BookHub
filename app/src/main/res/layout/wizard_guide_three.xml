@@ -26,19 +26,22 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/wizard_feature_title"
                 android:layout_width="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_gravity="center"
+                android:layout_marginStart="50dp"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:textSize="25sp"
                 android:layout_height="wrap_content"
-                android:text="Feature three"/>
+                android:text="Share your Experience"/>
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/wizard_feature_desc"
-                android:layout_margin="5dp"
+                android:layout_marginStart="50dp"
                 android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
                 android:layout_width="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="left"
                 android:layout_height="wrap_content"
-                android:text="description for the third feature"/>
+                android:text="Share your exciting reading moments with your friends and the world"/>
 
 
         </LinearLayout>

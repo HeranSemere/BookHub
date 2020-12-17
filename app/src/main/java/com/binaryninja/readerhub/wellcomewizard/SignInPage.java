@@ -22,10 +22,7 @@ public class SignInPage extends Fragment {
         View view = inflater.inflate(R.layout.wizard_account, container, false);
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         Fragment registerFragment = new SignInPage();
-        transaction.addToBackStack(null);
-        transaction.remove(this);
         transaction.replace(R.id.wizard_parent, registerFragment).commit();
-
         return view;
     }
 
