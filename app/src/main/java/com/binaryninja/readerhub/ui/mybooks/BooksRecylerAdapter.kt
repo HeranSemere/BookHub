@@ -1,20 +1,19 @@
 package com.binaryninja.readerhub.ui.mybooks
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.binaryninja.readerhub.R
 import com.binaryninja.readerhub.data.User
 import kotlinx.android.synthetic.main.book_item_layout.view.*
 
 class BooksRecylerAdapter( private var usersBooks : List<User>): RecyclerView.Adapter<BooksRecylerAdapter.ViewHolder>(){
-
-
-
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -43,6 +42,8 @@ class BooksRecylerAdapter( private var usersBooks : List<User>): RecyclerView.Ad
                 }
                 itemView.book_details.setOnClickListener {
                     Toast.makeText(itemView.context, "Will go to book details", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(itemView.context, BookDetail::class.java)
+                    ContextCompat.startActivity(itemView.context, intent, null)
 
                 }
 

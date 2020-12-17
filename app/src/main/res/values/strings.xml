@@ -12,7 +12,9 @@
     <string name="amharic">አማርኛ</string>
     <string name="oromifa">Oromifa</string>
     <string name="tigrigna">ትግሪኛ</string>
+    <string name="next">Next</string>
     <string name="a_promised_land_synopsis">
+
 A riveting, deeply personal account of history in the making, from the president who inspired us to believe in the power of democracy.\n\n
 
 In the stirring, highly anticipated first volume of his presidential memoirs, Barack Obama tells the story of his improbable odyssey from young man searching for his identity to leader of the free world, describing in strikingly personal detail both his political education and the landmark moments of the first term of his historic presidency—a time of dramatic transformation and turmoil. \n\n
@@ -25,4 +27,48 @@ A Promised Land is extraordinarily intimate and introspective—the story of one
 
 This beautifully written and powerful book captures Barack Obama’s conviction that democracy is not a gift from on high but something founded on empathy and common understanding and built together, day by day. \n\n
     </string>
+
+
+    <string-array name="cities">
+        <item>All</item>
+        <item>Adama</item>
+        <item>Addis Ababa</item>
+        <item>Adigrat</item>
+        <item>Aksum</item>
+        <item>Ambo</item>
+        <item>Arba Minch</item>
+        <item>Asela</item>
+        <item>Asosa</item>
+        <item>Bahir Dar</item>
+    </string-array>
+
+
+    <string-array name="sub_cities">
+        <item>All</item>
+        <item>Addis Ketema</item>
+        <item>Akaki Kality</item>
+        <item>Arada</item>
+        <item>Bole</item>
+        <item>Gulele</item>
+        <item>Kirkos</item>
+        <item>Kolfe Keranio</item>
+        <item>Lideta</item>
+        <item>Nifas Silk</item>
+
+    </string-array>
+
+
+    <string-array name="genre">
+        <item>All</item>
+        <item>Biography</item>
+        <item>Fiction</item>
+        <item>Novel</item>
+        <item>History</item>
+        <item>Myth</item>
+        <item>Satire</item>
+        <item>Self help</item>
+        <item>Classic</item>
+        <item>Mystery</item>
+
+    </string-array>
 </resources>
