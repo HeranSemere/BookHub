@@ -57,12 +57,6 @@ public class LangSelect extends Fragment {
         };
         rg1.setOnCheckedChangeListener(listener1);
         rg2.setOnCheckedChangeListener(listener2);
-        wizardNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                WizardMainViewModel.setPagerPos(1);
-            }
-        });
         return view;
     }
 

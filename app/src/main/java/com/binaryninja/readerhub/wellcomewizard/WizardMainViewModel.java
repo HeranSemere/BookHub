@@ -4,17 +4,31 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 public class WizardMainViewModel {
-    private static MutableLiveData<Integer> setpager;
-    public static void setPagerPos(int pos){
+    private static MutableLiveData<String> setpager;
+    private static MutableLiveData<String> fragment;
+    public static void setPagerPos(String fragment){
         if (setpager==null)
             setpager = new MutableLiveData<>();
-        setpager.setValue(pos);
+        setpager.setValue(fragment);
     }
-    public static LiveData<Integer> getPagerPos(){
+    public static LiveData<String> getPagerPos(){
         if (setpager==null){
             setpager = new MutableLiveData<>();
-            setpager.setValue(0);
+            setpager.setValue("");
         }
         return setpager;
+    }
+    public static void changeFragment(String fragmentName){
+        if (fragment==null)
+            fragment = new MutableLiveData<>();
+        fragment.setValue(fragmentName);
+        setPagerPos("");
+    }
+    public static LiveData<String> handleChangeFragment(){
+        if (fragment==null){
+            fragment = new MutableLiveData<>();
+            fragment.setValue("");
+        }
+        return fragment;
     }
 }

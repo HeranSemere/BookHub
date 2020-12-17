@@ -22,6 +22,7 @@ public class AccountPage extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.wizard_signin,container,false);
         signup = view.findViewById(R.id.wizard_login_signup);
+        login = view.findViewById(R.id.wizard_register_login);
         guest = view.findViewById(R.id.wizard_login_guest);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,9 +31,14 @@ public class AccountPage extends Fragment {
                 Fragment registerFragment = new RegisterPage();
                 transaction.replace(R.id.wizard_parent,registerFragment);
                 transaction.commitAllowingStateLoss();
+                WizardMainViewModel.setPagerPos("signin");
             }
         });
         guest.setOnClickListener(view1 -> startActivity(new Intent(getContext(), MainActivity.class)));
+
+        login.setOnClickListener(view1 -> {
+            //TODO handle login from server
+        });
         return view;
     }
     public void loadResource(){
