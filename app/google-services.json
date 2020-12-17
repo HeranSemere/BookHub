@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "546717227112",
+    "project_id": "readerhub-593b1",
+    "storage_bucket": "readerhub-593b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546717227112:android:c787ae330f5255479c03dd",
+        "android_client_info": {
+          "package_name": "com.binaryninja.readerhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546717227112-6fo3on668h5nsm8hpi8hnedndhe806s5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpPfDAe0JOTgu3-IEHFUasFR-HmRPOssM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546717227112-6fo3on668h5nsm8hpi8hnedndhe806s5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
