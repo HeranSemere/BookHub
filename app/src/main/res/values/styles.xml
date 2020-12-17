@@ -12,4 +12,8 @@
         <item name="android:windowNoTitle">true</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="whiteTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">#bbb</item>
+    </style>
 </resources>

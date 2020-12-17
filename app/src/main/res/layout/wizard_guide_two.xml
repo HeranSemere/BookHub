@@ -7,7 +7,7 @@
     android:layout_gravity="center">
     <androidx.core.widget.NestedScrollView
         android:id="@+id/wizard_guide_scroll"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -20,25 +20,32 @@
             android:orientation="vertical">
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/wizard_feature_icon"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                app:srcCompat="@drawable/ic_baseline_library_books_24"
-                app:tint="@color/colorAccent"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/guide_two"
+                />
             <androidx.appcompat.widget.AppCompatTextView
+                android:textColor="@color/white"
                 android:id="@+id/wizard_feature_title"
-                android:layout_margin="10dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
                 android:layout_width="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="left"
                 android:textSize="25sp"
                 android:layout_height="wrap_content"
-                android:text="Location based"/>
+                android:text="Exchange Books"/>
             <androidx.appcompat.widget.AppCompatTextView
+                android:textColor="@color/white"
                 android:id="@+id/wizard_feature_desc"
                 android:textSize="20sp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
                 android:layout_width="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="left"
                 android:layout_height="wrap_content"
-                android:text="Location based"/>
+                android:text="You will be able to share and exchange books with your nearby peoples, we will match you with th appropriate "/>
 
 
         </LinearLayout>
@@ -52,6 +59,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/button_bg"
         android:text="@string/next"
+        android:visibility="gone"
         android:textColor="@color/white"
         android:layout_marginBottom="15dp"
         app:layout_constraintLeft_toLeftOf="parent"

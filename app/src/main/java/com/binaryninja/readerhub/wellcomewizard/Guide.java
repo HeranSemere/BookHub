@@ -24,8 +24,6 @@ public class Guide extends Fragment {
         View view = inflater.inflate(R.layout.wizard_guide,container,false);
         desc = view.findViewById(R.id.wizard_feature_desc);
         title = view.findViewById(R.id.wizard_feature_title);
-        wizardNext = view.findViewById(R.id.wizard_next);
-        wizardNext.setOnClickListener(view1 -> WizardMainViewModel.setPagerPos(2));
         return view;
     }
     public void loadResource(){

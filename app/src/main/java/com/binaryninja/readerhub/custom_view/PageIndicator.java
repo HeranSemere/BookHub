@@ -40,7 +40,8 @@ public class PageIndicator extends LinearLayout {
             AppCompatTextView view = new AppCompatTextView(getContext());
             view.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             view.setText("○");
-            view.setTextColor(Color.parseColor("#883D3D3D"));
+            view.setTextColor(Color.BLACK);
+            //view.setTextColor(Color.parseColor("#883D3D3D"));
             view.setTextSize(18);
             view.setPadding(15, 0, 15, 0);
             views.add(view);
