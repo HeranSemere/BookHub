@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.binaryninja.readerhub.OwnersBooks
 import com.binaryninja.readerhub.R
 import com.binaryninja.readerhub.data.User
 import kotlinx.android.synthetic.main.book_item_layout.view.*
@@ -37,11 +38,13 @@ class BooksRecylerAdapter( private var usersBooks : List<User>): RecyclerView.Ad
                 val position: Int = adapterPosition
 
                 itemView.owners_profile.setOnClickListener {
-                    Toast.makeText(itemView.context, "Will go to owners profile", Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(itemView.context, OwnersBooks::class.java)
+                    ContextCompat.startActivity(itemView.context, intent, null)
 
                 }
                 itemView.book_details.setOnClickListener {
-                    Toast.makeText(itemView.context, "Will go to book details", Toast.LENGTH_SHORT).show()
+
                     val intent = Intent(itemView.context, BookDetail::class.java)
                     ContextCompat.startActivity(itemView.context, intent, null)
 

@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.observe
 import com.binaryninja.readerhub.MainActivity
 import com.binaryninja.readerhub.R
 import com.binaryninja.readerhub.model.User
@@ -45,7 +46,7 @@ class RegisterPage : Fragment() {
         password = view.findViewById(R.id.wizard_register_password)
         cpassword = view.findViewById(R.id.wizard_register_confirm_password)
         register?.setOnClickListener { registerUserToDatabase() }
-        WizardMainViewModel.handleChangeFragment().observe(viewLifecycleOwner, { s: String ->
+        WizardMainViewModel.handleChangeFragment().observe(viewLifecycleOwner) { s: String ->
             if (s == "signin") {
                 val transaction = childFragmentManager.beginTransaction()
                 val loginFragment: Fragment = SignInPage()
@@ -53,7 +54,7 @@ class RegisterPage : Fragment() {
                 transaction.commitAllowingStateLoss()
                 WizardMainViewModel.changeFragment("")
             }
-        })
+        }
         return view
     }
 
