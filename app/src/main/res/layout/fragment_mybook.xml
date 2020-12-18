@@ -44,6 +44,9 @@
             android:layout_marginBottom="-30dp"
             tools:itemCount="17"
             tools:listitem="@layout/book_item_layout" />
+
+
     </LinearLayout>
+
 
 </FrameLayout>

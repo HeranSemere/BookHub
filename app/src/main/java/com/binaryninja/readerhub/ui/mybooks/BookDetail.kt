@@ -1,7 +1,10 @@
 package com.binaryninja.readerhub.ui.mybooks
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
+import com.binaryninja.readerhub.OwnersBooks
 import com.binaryninja.readerhub.R
 import kotlinx.android.synthetic.main.activity_book_detail.*
 
@@ -13,6 +16,10 @@ class BookDetail : AppCompatActivity() {
 
         backBookDetail.setOnClickListener {
             finish()
+        }
+        ownerProfile.setOnClickListener {
+            val intent = Intent(this, OwnersBooks::class.java)
+            ContextCompat.startActivity(this, intent, null)
         }
     }
 }
