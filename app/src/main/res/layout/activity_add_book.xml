@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f6f8"
+    tools:context=".AddBook">
+    <include
+        layout="@layout/add_house_app_bar"/>
+
+    <ScrollView
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:background="@drawable/rounded_layout"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+
+                android:paddingStart="15dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="#13510F"
+                    android:gravity="center_vertical"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:text="Book Cover" />
+
+                <ImageView
+                    android:id="@+id/photoCheck"
+                    tools:src="@drawable/check"
+                    android:layout_marginRight="4dp"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"/>
+                <ImageView
+                    android:clickable="true"
+                    android:id="@+id/attachImage"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/attach_icon"
+                    android:layout_marginEnd="10dp"
+                    />
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:background="@drawable/rounded_layout"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="8dp"
+                android:paddingStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="#13510F"
+                    android:gravity="center_vertical"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_width="330dp"
+                    android:textSize="18sp"
+                    android:text="Title" />
+
+
+                <EditText
+                    android:layout_marginEnd="10dp"
+                    android:inputType="textLongMessage"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Title" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:background="@drawable/rounded_layout"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="#13510F"
+                    android:gravity="center_vertical"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_width="330dp"
+                    android:textSize="18sp"
+                    android:text="Genre" />
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/add_genre"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:background="@drawable/rounded_layout"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="#13510F"
+                    android:gravity="center_vertical"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_width="330dp"
+                    android:textSize="18sp"
+                    android:text="Number Of Pages" />
+
+
+                <EditText
+                    android:layout_marginEnd="10dp"
+                    android:inputType="textLongMessage"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pages" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:background="@drawable/rounded_layout"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="#13510F"
+                    android:gravity="center_vertical"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_width="330dp"
+                    android:textSize="18sp"
+                    android:text="Author" />
+
+
+                <EditText
+                    android:layout_marginEnd="10dp"
+                    android:inputType="textLongMessage"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Author" />
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:background="@drawable/rounded_layout"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="15dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textColor="#13510F"
+                    android:gravity="center_vertical"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:textSize="18sp"
+                    android:text="Synopsis" />
+
+
+                <EditText
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:id="@+id/priceEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Enter synopsis of book"
+                    android:inputType="textMultiLine"
+
+                    />
+
+
+
+
+            </LinearLayout>
+
+
+
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="Add"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:backgroundTint="#2A4E2C"
+                android:id="@+id/addDoneButton"
+              />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

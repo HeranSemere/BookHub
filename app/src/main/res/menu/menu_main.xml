@@ -6,11 +6,10 @@
         android:id="@+id/search_icon"
         android:icon="@drawable/search"
         app:showAsAction="ifRoom"
-        android:title="Compose">
+        android:title="Search">
     </item>
     <item
         android:id="@+id/action_two"
-        android:title="Filter"/>
-
+        android:title="Log out"/>
 
 </menu>

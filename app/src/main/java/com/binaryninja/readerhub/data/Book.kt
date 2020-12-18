@@ -12,5 +12,4 @@ data class Book (
     val synopsis :String,
     val visibility: Boolean
 
-
     )

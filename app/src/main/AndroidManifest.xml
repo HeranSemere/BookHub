@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OwnersBooks"
+        <activity android:name=".AddBook"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".OwnersBooks"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.mybooks.BookDetail"
             android:theme="@style/AppTheme.NoActionBar" />

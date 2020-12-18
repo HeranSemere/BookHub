@@ -64,7 +64,20 @@ This beautifully written and powerful book captures Barack Obama’s conviction 
         <item>Fiction</item>
         <item>Novel</item>
         <item>History</item>
-        <item>Myth</item>
+        <item>Mythology</item>
+        <item>Satire</item>
+        <item>Self help</item>
+        <item>Classic</item>
+        <item>Mystery</item>
+
+    </string-array>
+
+    <string-array name="add_genre">
+        <item>Biography</item>
+        <item>Fiction</item>
+        <item>Novel</item>
+        <item>History</item>
+        <item>Mythology</item>
         <item>Satire</item>
         <item>Self help</item>
         <item>Classic</item>

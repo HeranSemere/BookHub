@@ -1,11 +1,15 @@
 package com.binaryninja.readerhub.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.binaryninja.readerhub.AddBook
+import com.binaryninja.readerhub.OwnersBooks
 import com.binaryninja.readerhub.R
 import com.binaryninja.readerhub.data.Book
 import com.binaryninja.readerhub.data.User
@@ -34,6 +38,8 @@ class ProfileFragment : Fragment() {
             textView.text = it
         })*/
 
+
+
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
@@ -50,5 +56,12 @@ class ProfileFragment : Fragment() {
 
         owners_books_recyclerView.layoutManager = LinearLayoutManager(activity)
         owners_books_recyclerView.adapter = OwnersBookRecyclerAdapter(usersBooks)
+
+        addFAB.setOnClickListener {
+
+            val intent = Intent (activity, AddBook::class.java)
+            activity?.startActivity(intent)
+
+        }
     }
 }
