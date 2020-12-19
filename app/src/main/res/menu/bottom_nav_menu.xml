@@ -11,11 +11,6 @@
         android:title="@string/my_books" />
 
     <item
-        android:id="@+id/navigation_exchange"
-        android:icon="@drawable/ic_round_compare_arrows_24"
-        android:title="@string/exchange" />
-
-    <item
         android:id="@+id/navigation_messages"
         android:icon="@drawable/ic_round_message_24"
         android:title="@string/messages" />

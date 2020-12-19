@@ -83,6 +83,7 @@
 
 
                 <EditText
+                    android:id="@+id/add_book_title"
                     android:layout_marginEnd="10dp"
                     android:inputType="textLongMessage"
                     android:layout_weight="1"
@@ -115,6 +116,7 @@
                     android:text="Genre" />
 
                 <Spinner
+                    android:id="@+id/add_book_genre"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -146,8 +148,9 @@
 
 
                 <EditText
+                    android:id="@+id/add_book_page"
                     android:layout_marginEnd="10dp"
-                    android:inputType="textLongMessage"
+                    android:inputType="number"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -178,6 +181,7 @@
 
 
                 <EditText
+                    android:id="@+id/add_book_author"
                     android:layout_marginEnd="10dp"
                     android:inputType="textLongMessage"
                     android:layout_weight="1"
@@ -219,7 +223,7 @@
                 <EditText
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
-                    android:id="@+id/priceEdit"
+                    android:id="@+id/add_book_synopsis"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"

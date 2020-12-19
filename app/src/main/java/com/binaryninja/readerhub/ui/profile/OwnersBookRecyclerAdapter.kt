@@ -32,7 +32,6 @@ class OwnersBookRecyclerAdapter( private var usersBooks : List<User>): RecyclerV
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         for (i in usersBooks[position].books.indices){
-
             holder.bookPicture.setImageResource(usersBooks[position].books[i].bookPicture)
             holder.bookTitle.text = usersBooks[position].books[i].bookName
         }

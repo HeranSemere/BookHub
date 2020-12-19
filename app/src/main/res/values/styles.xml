@@ -3,8 +3,9 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:windowFullscreen">true</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">#135E57</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="WizardTheme" parent="AppTheme">
         <item name="windowActionBar">false</item>
@@ -24,10 +25,16 @@
 
     <style name="ButtonTheme">
         <item name="android:layout_width">250dp</item>
-        <item name="backgroundTint">#5E807D</item>
+        <item name="backgroundTint">#008074</item>
         <item name="android:background">@drawable/button_background</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:textSize">18sp</item>
+    </style>
+    <style name="DialogThemes" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>

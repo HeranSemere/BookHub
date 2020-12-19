@@ -46,7 +46,7 @@ class RegisterPage : Fragment() {
         password = view.findViewById(R.id.wizard_register_password)
         cpassword = view.findViewById(R.id.wizard_register_confirm_password)
         register?.setOnClickListener { registerUserToDatabase() }
-        WizardMainViewModel.handleChangeFragment().observe(viewLifecycleOwner) { s: String ->
+        WizardMainViewModel.handleChangeFragment()?.observe(viewLifecycleOwner) { s: String ->
             if (s == "signin") {
                 val transaction = childFragmentManager.beginTransaction()
                 val loginFragment: Fragment = SignInPage()
@@ -77,7 +77,7 @@ class RegisterPage : Fragment() {
                                 context, "Registered Successfully.",
                                 Toast.LENGTH_SHORT
                             ).show()
-                            saveUserInfo(task.result?.user?.uid,user);
+                            saveUserInfo(user);
                             startActivity(Intent(context, MainActivity::class.java))
                             requireActivity().finish()
                         } else {
@@ -108,11 +108,12 @@ class RegisterPage : Fragment() {
             return User("", name, username, pass, addr)
         }
         return null
+
     }
 
-    private fun saveUserInfo(id: String?, user: User) {
+    private fun saveUserInfo(user: User) {
         val ref = firestore!!.collection("users")
-        if (id != null && id.isNotEmpty()) ref.document(id)
+        ref.document(user.username!!)
         val hashMap = HashMap<String, Any?>()
         hashMap["name"] = user.name
         hashMap["email"] = user.username

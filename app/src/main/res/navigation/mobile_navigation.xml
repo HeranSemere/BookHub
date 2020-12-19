@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.binaryninja.readerhub.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_home" />
 
     <fragment
@@ -17,11 +17,6 @@
         android:label="@string/my_books"
         tools:layout="@layout/fragment_mybook" />
 
-    <fragment
-        android:id="@+id/navigation_exchange"
-        android:name="com.binaryninja.readerhub.ui.exchange.ExchangeFragment"
-        android:label="@string/exchange"
-        tools:layout="@layout/fragment_exchange" />
     <fragment
         android:id="@+id/navigation_messages"
         android:name="com.binaryninja.readerhub.ui.messages.MessagesFragment"

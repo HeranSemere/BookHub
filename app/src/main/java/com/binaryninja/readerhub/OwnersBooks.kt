@@ -1,39 +1,52 @@
 package com.binaryninja.readerhub
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.binaryninja.readerhub.data.Book
-import com.binaryninja.readerhub.data.User
-import com.binaryninja.readerhub.ui.mybooks.BooksRecylerAdapter
+import com.binaryninja.readerhub.ui.profile.OwnerBookFirestoreRecyclerAdapter
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_owners_books.*
-import kotlinx.android.synthetic.main.fragment_mybook.*
 
 class OwnersBooks : AppCompatActivity() {
-
-    private var usersBooks = mutableListOf<User>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_owners_books)
+        try {
+            var id = intent.getStringExtra("uid");
+            if (id.isNullOrBlank()) id = FirebaseAuth.getInstance().currentUser?.uid
+            FirebaseFirestore.getInstance().collection("users").document(id!!).get()
+                .addOnCompleteListener(
+                    this
+                ) { task ->
+                    if (task.isSuccessful) {
+                        val user = FirebaseAuth.getInstance().currentUser;
+                        val tname = if (user?.displayName !=null) user?.displayName else user?.uid?.substring(0,10)
+                        val name = if (task.result?.getString("name")==null) tname else task.result?.getString("name")
+                        profile_owner_name.text = name
+                        profile_owned_by.text =
+                            "Books Owned By ${name}"
+                    }
+                }
 
-        ownersBooksBack.setOnClickListener {
-            finish()
+            val query: Query = FirebaseFirestore.getInstance()
+                .collection("books").whereEqualTo("ownerId", id);
+            val recyclerOptions: FirestoreRecyclerOptions<com.binaryninja.readerhub.model.Book> =
+                FirestoreRecyclerOptions.Builder<com.binaryninja.readerhub.model.Book>()
+                    .setQuery(query, com.binaryninja.readerhub.model.Book::class.java)
+                    .setLifecycleOwner(this)
+                    .build()
+
+            owners_list_of_books_recyclerView.layoutManager = LinearLayoutManager(this)
+            owners_list_of_books_recyclerView.adapter =
+                OwnerBookFirestoreRecyclerAdapter(recyclerOptions, findViewById(R.id.progress))
+        } catch (e: Exception) {
+            Toast.makeText(this, "Error : " + e.message, Toast.LENGTH_SHORT).show()
         }
-
-
-        val book1= Book(R.drawable.obamas_book,"A Promised Land", "Memoir",700,"Barack Obama", R.string.a_promised_land_synopsis.toString(),true)
-
-        val books= listOf(book1,book1)
-
-        for(i in 0..10) {
-            usersBooks.add(User(R.drawable.profile_pic,"Sarah","Assefa Tadesse",R.drawable.rating,books))
-        }
-
-        owners_list_of_books_recyclerView.layoutManager = LinearLayoutManager(this)
-        owners_list_of_books_recyclerView.adapter = OwnersBookListRecyclerAdapter(usersBooks)
-
-
-
     }
 }

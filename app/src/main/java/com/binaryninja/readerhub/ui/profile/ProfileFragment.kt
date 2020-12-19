@@ -5,61 +5,47 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.binaryninja.readerhub.AddBook
-import com.binaryninja.readerhub.OwnersBooks
 import com.binaryninja.readerhub.R
-import com.binaryninja.readerhub.data.Book
-import com.binaryninja.readerhub.data.User
-import com.binaryninja.readerhub.ui.mybooks.BooksRecylerAdapter
-import com.binaryninja.readerhub.ui.mybooks.MyBooksViewModel
+import com.binaryninja.readerhub.model.Book
+import com.binaryninja.readerhub.ui.mybooks.BookFirestoreRecyclerAdapter
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.fragment_mybook.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment() {
 
-    private lateinit var profileViewModel: MyBooksViewModel
-
-    private var usersBooks = mutableListOf<User>()
-
     override fun onCreateView(
 
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        /* profileViewModel =
-                ViewModelProviders.of(this).get(MyBooksViewModel::class.java)
-
-        val textView: TextView = root.findViewById(R.id.text)
-        profileViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })*/
-
-
-
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val book1= Book(R.drawable.obamas_book,"A Promised Land", "Memoir",700,"Barack Obama", R.string.a_promised_land_synopsis.toString(),true)
-
-        val books= listOf(book1,book1)
-
-        for(i in 0..10) {
-            usersBooks.add(User(R.drawable.profile_pic,"Sarah","Assefa Tadesse",R.drawable.rating,books))
-        }
-
+        val query: Query = FirebaseFirestore.getInstance()
+            .collection("books").whereEqualTo("ownerId",FirebaseAuth.getInstance().currentUser?.uid!!);
+        val recyclerOptions: FirestoreRecyclerOptions<Book> =
+            FirestoreRecyclerOptions.Builder<Book>()
+                .setQuery(query, Book::class.java)
+                .setLifecycleOwner(this)
+                .build()
         owners_books_recyclerView.layoutManager = LinearLayoutManager(activity)
-        owners_books_recyclerView.adapter = OwnersBookRecyclerAdapter(usersBooks)
-
+        owners_books_recyclerView.adapter = OwnerBookFirestoreRecyclerAdapter(recyclerOptions,view.findViewById(R.id.owner_progress))
         addFAB.setOnClickListener {
 
-            val intent = Intent (activity, AddBook::class.java)
+            val intent = Intent(activity, AddBook::class.java)
             activity?.startActivity(intent)
 
         }

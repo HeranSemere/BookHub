@@ -5,43 +5,51 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.binaryninja.readerhub.R
-import com.binaryninja.readerhub.data.Book
 import com.binaryninja.readerhub.data.User
+import com.binaryninja.readerhub.model.Book
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.FirebaseOptions
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.filter_dialoge.*
 import kotlinx.android.synthetic.main.filter_dialoge.view.*
 import kotlinx.android.synthetic.main.fragment_mybook.*
 
+
 class MyBooksFragment : Fragment() {
 
-    private lateinit var myBookViewModel: MyBooksViewModel
-
-    private var usersBooks = mutableListOf<User>()
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         return inflater.inflate(R.layout.fragment_mybook, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-       val book1= Book(R.drawable.obamas_book,"A Promised Land", "Memoir",700,"Barack Obama", R.string.a_promised_land_synopsis.toString(),true)
-
-        val books= listOf(book1,book1)
-
-        for(i in 0..10) {
-            usersBooks.add(User(R.drawable.profile_pic,"Sarah","Assefa Tadesse",R.drawable.rating,books))
-        }
+        val query: Query = FirebaseFirestore.getInstance()
+            .collection("books").whereEqualTo("visibility",true);
+        val recyclerOptions: FirestoreRecyclerOptions<Book> =
+            FirestoreRecyclerOptions.Builder<Book>()
+                .setQuery(query, Book::class.java)
+                .setLifecycleOwner(this)
+                .build()
 
         books_recyclerView.layoutManager = LinearLayoutManager(activity)
-        books_recyclerView.adapter = BooksRecylerAdapter(usersBooks)
+        books_recyclerView.adapter = BookFirestoreRecyclerAdapter(options = recyclerOptions,progressBar = view.findViewById<ProgressBar>(R.id.progress))
 
 
         filter.setOnClickListener {
-            val filterDialogView= LayoutInflater.from(context).inflate(R.layout.filter_dialoge,null)
+            val filterDialogView= LayoutInflater.from(context).inflate(
+                R.layout.filter_dialoge,
+                null
+            )
 
             val mBuilder= AlertDialog.Builder(context)
                 .setView(filterDialogView)

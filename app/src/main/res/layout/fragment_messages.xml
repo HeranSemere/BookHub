@@ -7,12 +7,14 @@
     tools:context=".ui.exchange.ExchangeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/messages_recyclerView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="-30dp"
-        tools:itemCount="17"
+        tools:itemCount="1"
         tools:listitem="@layout/messages_item_layout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

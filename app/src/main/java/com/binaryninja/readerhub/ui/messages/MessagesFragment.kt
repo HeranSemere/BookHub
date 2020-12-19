@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.binaryninja.readerhub.R
 import com.binaryninja.readerhub.data.Message
 import com.binaryninja.readerhub.data.User
-import com.binaryninja.readerhub.ui.mybooks.BooksRecylerAdapter
 import kotlinx.android.synthetic.main.fragment_messages.*
 import kotlinx.android.synthetic.main.fragment_mybook.*
 

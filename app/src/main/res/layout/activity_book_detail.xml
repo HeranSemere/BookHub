@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/detail_book_cover"
                 android:layout_width="170dp"
                 android:layout_height="240dp"
                 android:src="@drawable/obamas_book" />
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-
+                    android:id="@+id/detail_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
@@ -46,19 +46,19 @@
                     android:textSize="18sp" />
 
                 <TextView
-
+                    android:id="@+id/detail_genre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Genre: Memoir"
                     />
                 <TextView
-
+                    android:id="@+id/detail_page"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Size: 700 Pages"
                     />
                 <TextView
-
+                    android:id="@+id/detail_author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Author: Barack Obama"
@@ -70,8 +70,9 @@
                     android:focusable="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
                     <TextView
+                        android:visibility="invisible"
                         android:layout_gravity="center_vertical"
                         android:layout_marginEnd="4dp"
                         android:layout_width="wrap_content"
@@ -79,23 +80,26 @@
                         android:text="Owner:"
                         />
                     <ImageView
-
+                        android:id="@+id/detail_owner_pic"
                         android:layout_width="60dp"
-                        android:layout_gravity="center"
+                        android:layout_gravity="left"
                         android:layout_height="60dp"
                         android:src="@drawable/profile_pic" />
                     <LinearLayout
                         android:layout_gravity="center_vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
                         <TextView
+                            android:id="@+id/detail_ownername"
                             android:layout_gravity="center"
-                            android:layout_width="wrap_content"
+                            android:gravity="left"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sarah"
+                            android:text="Owner : Sarah"
                             />
                         <ImageView
+                            android:visibility="gone"
                             android:id="@+id/rating"
                             android:layout_width="wrap_content"
                             android:layout_gravity="center"
@@ -106,15 +110,15 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/requestAlert"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/detail_send_request"
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:background="#215E23"
-                    android:text="Get"
-                    />
+                    android:layout_height="27dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:background="#009688"
+                    android:padding="5dp"
+                    android:text="  Send Request  "
+                    android:textColor="@color/white" />
             </LinearLayout>
 
         </LinearLayout>
@@ -143,7 +147,7 @@
                 />
 
             <TextView
-
+                android:id="@+id/detail_synopsis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/a_promised_land_synopsis"

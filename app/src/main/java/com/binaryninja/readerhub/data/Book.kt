@@ -11,5 +11,4 @@ data class Book (
     val author: String,
     val synopsis :String,
     val visibility: Boolean
-
     )
