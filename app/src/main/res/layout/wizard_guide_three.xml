@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:layout_gravity="center">
     <androidx.core.widget.NestedScrollView
         android:id="@+id/wizard_guide_scroll"
@@ -30,14 +31,14 @@
                 android:layout_marginStart="50dp"
                 android:gravity="left"
                 android:layout_gravity="left"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:layout_height="wrap_content"
                 android:text="Share your Experience"/>
             <androidx.appcompat.widget.AppCompatTextView
                 android:textColor="@color/white"
                 android:id="@+id/wizard_feature_desc"
                 android:layout_marginStart="50dp"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:layout_width="wrap_content"

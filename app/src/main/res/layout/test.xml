@@ -101,6 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:clickable="true"
+            android:textColor="@color/colorPrimary"
             android:gravity="center_horizontal"
             android:text="Skip for now "
             android:textSize="18sp"

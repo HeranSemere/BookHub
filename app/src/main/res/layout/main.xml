@@ -27,10 +27,12 @@
             android:layout_width="100dp"
             android:maxWidth="200dp"
             android:text="@string/next"
-            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:backgroundTint="#252525"
+            android:textColor="@color/colorPrimary"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/button_bg_green"
+            android:background="@android:color/transparent"
             android:layout_height="40dp"/>
     </LinearLayout>
 

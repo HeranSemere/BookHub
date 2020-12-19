@@ -32,20 +32,20 @@
                 android:layout_marginEnd="30dp"
                 android:layout_width="wrap_content"
                 android:layout_gravity="left"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:layout_height="wrap_content"
                 android:text="Share Books"/>
             <androidx.appcompat.widget.AppCompatTextView
                 android:textColor="@color/white"
                 android:id="@+id/wizard_feature_desc"
                 android:layout_marginStart="50dp"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:layout_width="wrap_content"
                 android:layout_gravity="left"
                 android:layout_height="wrap_content"
-                android:text="Share the books you read, and borrow other book in return, Endless possibility"/>
+                android:text="Share the books you read, and borrow others in return"/>
 
 
         </LinearLayout>
