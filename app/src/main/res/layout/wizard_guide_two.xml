@@ -26,7 +26,7 @@
                 app:srcCompat="@drawable/guide_two"
                 />
             <androidx.appcompat.widget.AppCompatTextView
-                android:textColor="@color/white"
+                android:textColor="@color/colorPrimary"
                 android:id="@+id/wizard_feature_title"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:text="Exchange Books"/>
             <androidx.appcompat.widget.AppCompatTextView
-                android:textColor="@color/white"
+                android:textColor="@color/colorPrimary"
                 android:id="@+id/wizard_feature_desc"
                 android:textSize="17sp"
                 android:layout_marginStart="50dp"
