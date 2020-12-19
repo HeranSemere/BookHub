@@ -1,16 +1,20 @@
 package com.binaryninja.readerhub.ui.messages
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.binaryninja.readerhub.OwnersBooks
 import com.binaryninja.readerhub.R
 import com.binaryninja.readerhub.data.Message
 import com.binaryninja.readerhub.data.User
+import kotlinx.android.synthetic.main.messages_item_layout.view.*
 
 
 class MessagesRecyclerAdapter( private var messages : List<Message>): RecyclerView.Adapter<MessagesRecyclerAdapter.ViewHolder>() {
@@ -32,6 +36,16 @@ class MessagesRecyclerAdapter( private var messages : List<Message>): RecyclerVi
         val senderNameRequest: TextView = itemView.findViewById(R.id.senderNameRequest)
         val senderBookRequest: TextView = itemView.findViewById(R.id.senderBookRequest)
         val timeStampRequest: TextView = itemView.findViewById(R.id.timeStampRequest)
+
+
+        init {
+
+            itemView.senders_profile.setOnClickListener {
+
+                val intent = Intent(itemView.context, OwnersBooks::class.java)
+                ContextCompat.startActivity(itemView.context, intent, null)
+            }
+        }
 
 
     }

@@ -33,7 +33,6 @@ class BooksRecylerAdapter( private var usersBooks : List<User>): RecyclerView.Ad
 
         init {
 
-            itemView.setOnClickListener {
 
                 val position: Int = adapterPosition
 
@@ -50,7 +49,7 @@ class BooksRecylerAdapter( private var usersBooks : List<User>): RecyclerView.Ad
 
                 }
 
-            }
+
         }
 
 
