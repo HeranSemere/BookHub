@@ -20,6 +20,7 @@ class OwnersBookRecyclerAdapter( private var usersBooks : List<User>): RecyclerV
 
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.profile_books_item_layout, parent, false)
         return ViewHolder(v)

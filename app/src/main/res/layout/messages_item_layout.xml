@@ -10,89 +10,207 @@
     android:layout_marginBottom="2dp"
     android:foreground="?selectableItemBackground">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:paddingLeft="15dp"
-        android:layout_height="90dp">
-
-
-        <ImageView
-            android:layout_gravity="center_vertical"
-            android:id="@+id/senderImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            tools:srcCompat="@drawable/profile" />
-
-        <View
-            android:layout_width="9dp"
-            android:layout_height="match_parent"/>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <TextView
+        <LinearLayout
 
-            android:id="@+id/senderName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Alexander Hamilton"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:textColor="#1E5720"
-            android:id="@+id/senderBook"
-            android:textSize="15sp"
-            android:layout_marginBottom="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="A Promised Land" />
-
-        <TextView
-            android:id="@+id/senderMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="I was wondering if i..." />
-
-    </LinearLayout>
+            android:id="@+id/message_item"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:paddingLeft="15dp"
+            android:layout_height="90dp">
 
 
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/senderImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:srcCompat="@drawable/profile" />
 
-    <LinearLayout
-        android:layout_weight="1"
-        android:paddingRight="10dp"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+            <View
+                android:layout_width="9dp"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
 
-        <TextView
-            android:textColor="#000000"
-            android:id="@+id/timeStamp"
-            android:layout_gravity="right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Dec 18"
-            />
+                    android:id="@+id/senderName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Alexander Hamilton"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="5dp"/>
-        <ImageView
-            android:layout_gravity="right"
-            android:id="@+id/tag"
-            tools:src="@drawable/notification"
-            android:layout_width="20dp"
-            android:layout_height="20dp"/>
+                <TextView
+                    android:textColor="#1E5720"
+                    android:id="@+id/senderBook"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="A Promised Land" />
+
+                <TextView
+                    android:id="@+id/senderMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="I was wondering if i..." />
+
+            </LinearLayout>
 
 
-    </LinearLayout>
 
-        <View
-            android:layout_width="10dp"
-            android:layout_height="5dp"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:paddingRight="10dp"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="#000000"
+                    android:id="@+id/timeStamp"
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Dec 18"
+                    />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"/>
+                <ImageView
+                    android:layout_gravity="right"
+                    android:id="@+id/tag"
+                    tools:src="@drawable/notification"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="5dp"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+
+            android:id="@+id/request_item"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:paddingLeft="15dp"
+            android:layout_height="150dp">
+
+
+            <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/senderImageRequest"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    tools:srcCompat="@drawable/profile" />
+                <TextView
+
+                    android:id="@+id/senderNameRequest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    tools:text="Deborah"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/rating" />
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="match_parent"/>
+
+
+            <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#1E5720"
+                    android:id="@+id/senderBookRequest"
+                    android:textSize="17sp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="A Promised Land" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:backgroundTint="#215E23"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="Accept"/>
+
+                    <Button
+                        android:backgroundTint="#215E23"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deny"/>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="0dp"/>
+            <TextView
+                android:textColor="#000000"
+                android:paddingTop="10dp"
+                android:id="@+id/timeStampRequest"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                tools:text="Dec 18"
+                />
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
 
 </androidx.cardview.widget.CardView>

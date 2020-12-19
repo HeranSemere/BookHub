@@ -40,10 +40,11 @@ class MessagesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
       
-        message.add(Message(R.drawable.profile3,"Mike","Hello, I was wondering if i can...","A Promised Land","8:42", R.drawable.notification))
-        message.add(Message(R.drawable.profile4,"Deborah","\uD83D\uDC4D","1984","Sat",0))
-        message.add(Message(R.drawable.profile5,"Kaleb","Sure","Alice's Adventures in Wonderland","Sat",0))
-        message.add(Message(R.drawable.profile6,"Dumbledore","That is correct.","Animal Farm","Dec 10",0))
+        message.add(Message(R.drawable.profile3,"Mike","Hello, I was wondering if i can...","A Promised Land","8:42", R.drawable.notification,false))
+        message.add(Message(R.drawable.profile4,"Deborah","Yeah","Animal Farm","Sat",0,true))
+        message.add(Message(R.drawable.profile7,"Demekech","Sure","A Passage To India","Sat",0, true))
+        message.add(Message(R.drawable.profile5,"Kaleb","\uD83D\uDC4D","Alice's Adventures in Wonderland","Fri",0, false))
+        message.add(Message(R.drawable.profile6,"Dumbledore","That is correct.","1984","Dec 10",0,false))
 
 
         messages_recyclerView.layoutManager = LinearLayoutManager(activity)

@@ -6,5 +6,6 @@ data class Message(
     val senderMessage: String,
     val book: String,
     val timeStamp: String,
-    val tag: Int
+    val tag: Int,
+    val newRequest: Boolean
 )

@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.binaryninja.readerhub.R
 import com.binaryninja.readerhub.data.Message
@@ -22,6 +24,15 @@ class MessagesRecyclerAdapter( private var messages : List<Message>): RecyclerVi
         val tag: ImageView= itemView.findViewById(R.id.tag)
         val book: TextView= itemView.findViewById(R.id.senderBook)
 
+        val message_item:LinearLayout=itemView.findViewById(R.id.message_item)
+        val request_item:LinearLayout=itemView.findViewById(R.id.request_item)
+
+
+        val senderPictureRequest: ImageView = itemView.findViewById(R.id.senderImageRequest)
+        val senderNameRequest: TextView = itemView.findViewById(R.id.senderNameRequest)
+        val senderBookRequest: TextView = itemView.findViewById(R.id.senderBookRequest)
+        val timeStampRequest: TextView = itemView.findViewById(R.id.timeStampRequest)
+
 
     }
 
@@ -37,12 +48,23 @@ class MessagesRecyclerAdapter( private var messages : List<Message>): RecyclerVi
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-            holder.senderPicture.setImageResource(messages[position].senderPicture)
-            holder.senderName.text = messages[position].senderName
-            holder.book.text = messages[position].book
-            holder.senderMessage.text = messages[position].senderMessage
-            holder.timeStamp.text = messages[position].timeStamp
-            holder.tag.setImageResource(messages[position].tag)
+            if(messages[position].newRequest){
+                holder.message_item.visibility = View.GONE
+                holder.senderPictureRequest.setImageResource(messages[position].senderPicture)
+                holder.senderNameRequest.text = messages[position].senderName
+                holder.senderBookRequest.text = messages[position].book
+                holder.timeStampRequest.text = messages[position].timeStamp
+
+
+            }else{
+                holder.request_item.visibility = View.GONE
+                holder.senderPicture.setImageResource(messages[position].senderPicture)
+                holder.senderName.text = messages[position].senderName
+                holder.book.text = messages[position].book
+                holder.senderMessage.text = messages[position].senderMessage
+                holder.timeStamp.text = messages[position].timeStamp
+                holder.tag.setImageResource(messages[position].tag)
+            }
 
     }
 }
