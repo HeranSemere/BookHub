@@ -30,39 +30,47 @@
                 android:id="@+id/detail_book_cover"
                 android:layout_width="170dp"
                 android:layout_height="240dp"
-                android:src="@drawable/obamas_book" />
+                android:src="@drawable/obamas_book1" />
 
             <LinearLayout
                 android:layout_gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
-                    android:id="@+id/detail_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:text="A Promised Land"
-                    android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/detail_genre"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Genre: Memoir"
-                    />
-                <TextView
-                    android:id="@+id/detail_page"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Size: 700 Pages"
-                    />
-                <TextView
-                    android:id="@+id/detail_author"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Author: Barack Obama"
-                    />
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/detail_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:text="A Promised Land"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/detail_genre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Genre: Memoir"
+                        />
+                    <TextView
+                        android:id="@+id/detail_page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Size: 700 Pages"
+                        />
+                    <TextView
+                        android:id="@+id/detail_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Author: Barack Obama"
+                        />
+                </LinearLayout>
+
 
                 <LinearLayout
                     android:id="@+id/ownerProfile"
@@ -79,45 +87,55 @@
                         android:layout_height="wrap_content"
                         android:text="Owner:"
                         />
-                    <ImageView
-                        android:id="@+id/detail_owner_pic"
-                        android:layout_width="60dp"
-                        android:layout_gravity="left"
-                        android:layout_height="60dp"
-                        android:src="@drawable/profile_pic" />
+
                     <LinearLayout
+                        android:gravity="center"
                         android:layout_gravity="center_vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
-                        <TextView
-                            android:id="@+id/detail_ownername"
-                            android:layout_gravity="center"
-                            android:gravity="left"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Owner : Sarah"
-                            />
                         <ImageView
-                            android:visibility="gone"
-                            android:id="@+id/rating"
+                            android:id="@+id/detail_owner_pic"
+                            android:layout_width="60dp"
+                            android:layout_gravity="left"
+                            android:paddingRight="10dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/profile7" />
+
+                        <LinearLayout
+                          android:layout_gravity="center_vertical"
+
                             android:layout_width="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_height="13dp"
-                            android:src="@drawable/rating" />
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/detail_ownername"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Sarah"
+                                />
+                            <ImageView
+                                android:id="@+id/rating"
+                                android:layout_width="70dp"
+                                android:layout_height="13dp"
+                                android:src="@drawable/rating" />
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
+
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/detail_send_request"
                     android:layout_width="wrap_content"
                     android:layout_height="27dp"
-                    android:layout_gravity="left"
+                    android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:background="#009688"
-                    android:padding="5dp"
-                    android:text="  Send Request  "
+                    android:background="#245E26"
+                    android:text="Get"
                     android:textColor="@color/white" />
             </LinearLayout>
 

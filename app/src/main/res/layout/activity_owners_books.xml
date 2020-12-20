@@ -54,7 +54,7 @@
             android:id="@+id/profile_owned_by"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Books Owned By ..."
+            android:text="Books Owned By Mike"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"

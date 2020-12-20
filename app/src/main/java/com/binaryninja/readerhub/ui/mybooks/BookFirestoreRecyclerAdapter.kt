@@ -37,11 +37,26 @@ public class BookFirestoreRecyclerAdapter(
         holder.bookTitle.text = model.bookName!!
         holder.bookAuthor.text = model.author!!
         holder.bookGenre.text = model.genre!!
-        holder.bookPages.text = model.page!!.toString()
+        holder.bookPages.text = "${model.page!!.toString()} Pages"
         if (!model.bookPicPath.isNullOrEmpty()) {
             Picasso.get().load(model.bookPicPath!!).placeholder(R.drawable.obamas_book)
                 .into(holder.bookPicture!!)
         }
+        if("Demekech"==model.ownerName!!){
+            holder.ownersPicture.setImageResource(R.drawable.profile7)
+            holder.bookPicture.setImageResource(R.drawable.obamas_book1)
+        }
+        else if("Kaleb"==model.ownerName!!){
+            holder.ownersPicture.setImageResource(R.drawable.profile5)
+        }
+        else if("Mike"==model.ownerName!!){
+            holder.ownersPicture.setImageResource(R.drawable.profile3)
+        }
+        else{
+            holder.ownersPicture.setImageResource(R.drawable.ic_baseline_account_circle_24)
+        }
+
+
         holder.ownersName.text = model.ownerName!!
         holder.ownersName.setOnClickListener {
             holder.itemView.context.startActivity(

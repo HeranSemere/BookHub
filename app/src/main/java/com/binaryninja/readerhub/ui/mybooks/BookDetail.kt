@@ -22,7 +22,7 @@ class BookDetail : AppCompatActivity() {
             detail_genre.text = "Genre : " + intent.getStringExtra("genre")
             detail_author.text = "Author " + intent.getStringExtra("author")
             detail_synopsis.text = intent.getStringExtra("synopsis")
-            detail_ownername.text = "Owner : " + intent.getStringExtra("ownerName")
+            detail_ownername.text = intent.getStringExtra("ownerName")
             detail_page.text =
                 "Total Page : " + intent.getIntExtra("page", 300.rangeTo(500).random())
             val uid = intent.getStringExtra("ownerId")

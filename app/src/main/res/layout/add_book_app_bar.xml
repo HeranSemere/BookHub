@@ -6,7 +6,7 @@
     android:layout_height="?attr/actionBarSize"
     android:id="@+id/addHouseToolBar"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:background="@color/colorPrimaryDark">
+    android:background="@color/bar_color">
 
     <ImageView
         android:clickable="true"
